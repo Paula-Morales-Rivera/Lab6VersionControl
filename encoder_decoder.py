@@ -43,7 +43,7 @@ def main():
             # decodes password Noel Mendez
             encoded_password = input('Please enter the password to decode: ')
             decoded_pass = decode(encoded_password)
-            print('The decoded password is:', decoded_pass)
+            print('The decoded password is:', decoded_pass, 'and the original password is', encoded_password + '.\n'))
 
 
 if __name__ == '__main__':
