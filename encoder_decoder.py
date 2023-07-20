@@ -21,9 +21,9 @@ def encode(password):
     return encoded_pass
 
 # decodes password Noel Mendez
-def decode(encoded_password):
+def decode(encoded_pass):
     decoded_pass = ''
-    for i in encoded_password:
+    for i in encoded_pass:
         # Decrements item by three
         decoded_num = (int(i) - 3) % 10
         decoded_pass += str(decoded_num)
@@ -37,14 +37,14 @@ def main():
         if option == 3:
             break
         elif option == 1:
-            password = input('Please enter your password to encode: ')            encoded_pass = encode(password)
+            password = input('Please enter your password to encode: ')
+            encoded_pass = encode(password)
             print('Your password has been encoded and stored!\n')
 
         elif option == 2:
             # decodes password Noel Mendez
-            encoded_password = input('Please enter the password to decode: ')
-            decoded_pass = decode(encoded_password)
-            print('The decoded password is:', decoded_pass, 'and the original password is', encoded_password + '.\n')
+            decoded_pass = decode(encoded_pass)
+            print(f'The encoded password is {encoded_pass}, and the original password is {decoded_pass}.\n')
 
 if __name__ == '__main__':
     main()
