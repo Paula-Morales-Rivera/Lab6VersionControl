@@ -24,9 +24,11 @@ def encode(password):
 def decode(encoded_password):
     decoded_pass = ''
     for i in encoded_password:
+        # Decrements item by three
         decoded_num = (int(i) - 3) % 10
         decoded_pass += str(decoded_num)
     return decoded_pass
+
 
 def main():
     while True:
@@ -35,16 +37,14 @@ def main():
         if option == 3:
             break
         elif option == 1:
-            password = input('Please enter your password to encode: ')
-            encoded_pass = encode(password)
+            password = input('Please enter your password to encode: ')            encoded_pass = encode(password)
             print('Your password has been encoded and stored!\n')
 
         elif option == 2:
             # decodes password Noel Mendez
             encoded_password = input('Please enter the password to decode: ')
             decoded_pass = decode(encoded_password)
-            print('The decoded password is:', decoded_pass, 'and the original password is', encoded_password + '.\n'))
-
+            print('The decoded password is:', decoded_pass, 'and the original password is', encoded_password + '.\n')
 
 if __name__ == '__main__':
     main()
